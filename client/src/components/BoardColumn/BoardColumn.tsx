@@ -13,6 +13,7 @@ export function BoardColumn(props: Props) {
       <div className={styles.cards}>
         {props.cards.map(card => 
         <BoardCard 
+          key={card.id}
           title={card.title} 
           isDone={card.isDone} 
           />)}
