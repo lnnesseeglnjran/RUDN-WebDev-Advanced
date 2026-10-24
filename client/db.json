@@ -17,6 +17,12 @@
       "title": "Добавить фильтр выполненных карточек",
       "isDone": false,
       "isUrgent": false
+    },
+    {
+      "title": "людь",
+      "isDone": false,
+      "isUrgent": false,
+      "id": "X65NxETJi_I"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
