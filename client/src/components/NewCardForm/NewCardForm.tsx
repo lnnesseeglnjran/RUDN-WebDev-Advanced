@@ -28,7 +28,7 @@ export function NewCardForm() {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-      <button className={styles.button} type="button" onClick={handleAdd}>
+      <button className={styles.button} type="button" onClick={handleAdd} disabled={title.trim() === ""}>
         Добавить
       </button>
     </div>
