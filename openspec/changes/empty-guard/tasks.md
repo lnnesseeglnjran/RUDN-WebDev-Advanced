@@ -6,5 +6,5 @@
 
 ## 2. Верификация
 
-- [ ] 2.1 Убедиться, что валидация обоих изменений проходит: `openspec validate --changes cards-counter && openspec validate --changes empty-guard`
+- [x] 2.1 Убедиться, что валидация обоих изменений проходит: `openspec validate --changes cards-counter && openspec validate --changes empty-guard`
 - [ ] 2.2 Запустить приложение и проверить сценарии из спецификации: пустое поле → кнопка неактивна, текст введён → кнопка активна, клик по неактивной кнопке не создаёт карточку
