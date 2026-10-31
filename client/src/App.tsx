@@ -1,8 +1,8 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { BoardHeader } from "./components/BoardHeader/BoardHeader";
 import { BoardColumn } from "./components/BoardColumn/BoardColumn";
 import { NewCardForm } from "./components/NewCardForm/NewCardForm";
-import { fetchCards } from "./api/cards";
+import { fetchCards, deleteCard } from "./api/cards";
 import styles from "./App.module.css";
 
 function App() {
@@ -10,6 +10,18 @@ function App() {
     queryKey: ["cards"],
     queryFn: fetchCards,
   });
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation({
+    mutationFn: deleteCard,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["cards"] });
+    },
+  });
+
+  const handleDelete = (id: string) => {
+    mutation.mutate(id);
+  };
 
   return (
     <div className={styles.app}>
@@ -20,7 +32,7 @@ function App() {
           {isLoading ? (
             <p>Загрузка…</p>
           ) : (
-            <BoardColumn cards={cards ?? []} />
+            <BoardColumn cards={cards ?? []} onDelete={handleDelete} />
           )}
         </div>
       </main>
