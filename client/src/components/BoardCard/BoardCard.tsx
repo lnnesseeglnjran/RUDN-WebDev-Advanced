@@ -13,7 +13,11 @@ export function BoardCard({ id, title, isDone, onDelete }: BoardCardProps) {
       <button
         className={styles.deleteButton}
         type="button"
-        onClick={() => onDelete(id)}
+        onClick={() => {
+          if (window.confirm("Удалить карточку?")) {
+            onDelete(id);
+          }
+        }}
       >
         ×
       </button>
