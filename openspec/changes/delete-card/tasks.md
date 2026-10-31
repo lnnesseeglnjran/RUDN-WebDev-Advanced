@@ -1,14 +1,14 @@
 ## 1. Минимальное удаление без подтверждения
 
-- [ ] 1.1 Добавить `deleteCard(id: string)` в `client/src/api/cards.ts` с `fetch DELETE /api/cards/:id` и проверкой `response.ok`, убедиться что ошибка сервера выбрасывается через `throw new Error`
+- [x] 1.1 Добавить `deleteCard(id: string)` в `client/src/api/cards.ts` с `fetch DELETE /api/cards/:id` и проверкой `response.ok`, убедиться что ошибка сервера выбрасывается через `throw new Error`
 
-- [ ] 1.2 Добавить `useQueryClient` и `useMutation({ mutationFn: deleteCard, onSuccess: () => queryClient.invalidateQueries({ queryKey: ["cards"] }) })` в `client/src/App.tsx`, создать функцию `handleDelete(id: string)`
+- [x] 1.2 Добавить `useQueryClient` и `useMutation({ mutationFn: deleteCard, onSuccess: () => queryClient.invalidateQueries({ queryKey: ["cards"] }) })` в `client/src/App.tsx`, создать функцию `handleDelete(id: string)`
 
-- [ ] 1.3 Пробросить `handleDelete` в `BoardColumn` как `onDelete`, передать `card.id` и `onDelete` в `BoardCard` при рендере
+- [x] 1.3 Пробросить `handleDelete` в `BoardColumn` как `onDelete`, передать `card.id` и `onDelete` в `BoardCard` при рендере
 
-- [ ] 1.4 Добавить props `id: string` и `onDelete: (id: string) => void` в `BoardCard`, добавить кнопку-крестик (`×`) в шаблон, привязать `onClick` к `onDelete(id)`
+- [x] 1.4 Добавить props `id: string` и `onDelete: (id: string) => void` в `BoardCard`, добавить кнопку-крестик (`×`) в шаблон, привязать `onClick` к `onDelete(id)`
 
-- [ ] 1.5 Проверка в браузере: открыть доску, кликнуть по крестику — карточка удаляется без перезагрузки страницы; нажать F5 — удалённая карточка не появляется
+- [x] 1.5 Проверка в браузере: открыть доску, кликнуть по крестику — карточка удаляется без перезагрузки страницы; нажать F5 — удалённая карточка не появляется
 
 ## 2. Подтверждение через window.confirm
 
