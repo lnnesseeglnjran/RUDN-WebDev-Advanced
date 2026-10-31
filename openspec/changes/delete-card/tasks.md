@@ -30,9 +30,9 @@
 
 ## 5. Верификация
 
-- [ ] 5.1 Запустить `openspec validate --changes cards-counter && openspec validate --changes empty-guard && openspec validate --changes delete-card` — все три проходят
+- [x] 5.1 Запустить `openspec validate --changes cards-counter && openspec validate --changes empty-guard && openspec validate --changes delete-card` — все три проходят
 
-- [ ] 5.2 Проверка в браузере по всем сценариям спеки:
+- [x] 5.2 Проверка в браузере по всем сценариям спеки:
   - Элемент удаления виден на каждой карточке
   - Подтверждение показывается при клике на крестик
   - При отказе карточка остаётся
