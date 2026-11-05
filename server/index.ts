@@ -18,7 +18,11 @@ app.get("/cards", (req, res) => {
 
 app.post("/cards", (req, res) => {
   const title = req.body?.title;
-  const card = { id: randomUUID(), title, isDone: false, isUrgent: false };
+  if (typeof title !== "string" || title.trim() === "") {
+    res.status(400).json({ error: "Название карточки не может быть пустым" });
+    return;
+  }
+  const card = { id: randomUUID(), title: title.trim(), isDone: false, isUrgent: false };
   cards.push(card);
   res.status(201).json(card);
 });
