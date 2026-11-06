@@ -1,6 +1,6 @@
 ## 1. Роут удаления карточки
 
-- [ ] 1.1 Добавить `app.delete("/cards/:id", ...)` в `server/index.ts` после `app.post("/cards", ...)`, найти карточку по `id` через `findIndex`, при отсутствии вернуть 404 с JSON, при наличии удалить через `splice(index, 1)` и вернуть 204 без тела
+- [x] 1.1 Добавить `app.delete("/cards/:id", ...)` в `server/index.ts` после `app.post("/cards", ...)`, найти карточку по `id` через `findIndex`, при отсутствии вернуть 404 с JSON, при наличии удалить через `splice(index, 1)` и вернуть 204 без тела
 
 - [ ] 1.2 Проверка в терминале: запустить сервер (`npm run dev`), выполнить `curl -i -X DELETE http://localhost:3001/cards/1` — получить 204 без тела; выполнить `curl http://localhost:3001/cards` — карточка с id "1" отсутствует; выполнить `curl -i -X DELETE http://localhost:3001/cards/1` повторно — получить 404 с JSON-описанием ошибки
 
