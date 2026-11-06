@@ -27,6 +27,20 @@ app.post("/cards", (req, res) => {
   res.status(201).json(card);
 });
 
+app.delete("/cards/:id", (req, res) => {
+  const index = cards.findIndex(c => c.id === req.params.id);
+  if (index === -1) {
+    res.status(404).json({ error: "Карточка не найдена" });
+    return;
+  }
+  cards.splice(index, 1);
+  res.status(204).send();
+});
+
+app.use((req, res) => {
+  res.status(404).json({ error: "Маршрут не найден" });
+});
+
 app.listen(PORT, () => {
   console.log(`Сервер запущен: http://localhost:${PORT}`);
 });
