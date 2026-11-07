@@ -12,7 +12,7 @@
 
 ## 4. Роутер
 
-- [ ] 4.1 Добавить `router.patch("/:id", validateDoneToggle, updateCardDoneHandler)` в `server/routes/cards.routes.ts`, импортировать `validateDoneToggle` и `updateCardDoneHandler`
+- [x] 4.1 Добавить `router.patch("/:id", validateDoneToggle, updateCardDoneHandler)` в `server/routes/cards.routes.ts`, импортировать `validateDoneToggle` и `updateCardDoneHandler`
 
 ## 5. API клиент
 
