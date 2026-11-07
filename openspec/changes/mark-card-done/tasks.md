@@ -16,19 +16,19 @@
 
 ## 5. API клиент
 
-- [ ] 5.1 Добавить `toggleCardDone(id: string, isDone: boolean): Promise<Card>` в `client/src/api/cards.ts`: `fetch PATCH /api/cards/:id` с телом `{ isDone }`, проверить `response.ok`, вернуть `response.json()`
+- [x] 5.1 Добавить `toggleCardDone(id: string, isDone: boolean): Promise<Card>` в `client/src/api/cards.ts`: `fetch PATCH /api/cards/:id` с телом `{ isDone }`, проверить `response.ok`, вернуть `response.json()`
 
 ## 6. App: мутация и проброс коллбека
 
-- [ ] 6.1 Добавить `useQueryClient` и `useMutation({ mutationFn: toggleCardDone, onSuccess: () => queryClient.invalidateQueries({ queryKey: ["cards"] }) })` в `client/src/App.tsx`, создать `handleToggle(id, isDone)` и пробросить в `BoardColumn`
+- [x] 6.1 Добавить `useQueryClient` и `useMutation({ mutationFn: toggleCardDone, onSuccess: () => queryClient.invalidateQueries({ queryKey: ["cards"] }) })` в `client/src/App.tsx`, создать `handleToggle(id, isDone)` и пробросить в `BoardColumn`
 
 ## 7. BoardColumn: проброс id и onToggle
 
-- [ ] 7.1 Добавить `onToggle` в props `BoardColumn`, передать `card.id` и `onToggle` в `BoardCard` при рендере
+- [x] 7.1 Добавить `onToggle` в props `BoardColumn`, передать `card.id` и `onToggle` в `BoardCard` при рендере
 
 ## 8. BoardCard: элемент управления
 
-- [ ] 8.1 Добавить props `id: string` и `onToggle: (id: string, isDone: boolean) => void` в `BoardCard`, добавить чекбокс `<input type="checkbox" checked={isDone} onChange={e => onToggle(id, e.target.checked)} />` в шаблон, стилизовать чекбокс в `BoardCard.module.css`
+- [x] 8.1 Добавить props `id: string` и `onToggle: (id: string, isDone: boolean) => void` в `BoardCard`, добавить чекбокс `<input type="checkbox" checked={isDone} onChange={e => onToggle(id, e.target.checked)} />` в шаблон, стилизовать чекбокс в `BoardCard.module.css`
 
 ## 9. Верификация
 
