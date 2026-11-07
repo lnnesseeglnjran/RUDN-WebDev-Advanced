@@ -4,11 +4,11 @@
 
 ## 2. Контроллер
 
-- [ ] 2.1 Добавить `updateCardDoneHandler(req: Request, res: Response): Promise<void>` в `server/controllers/cards.controller.ts`: вызвать `await updateCardDone(req.params.id, req.body.isDone)`, если `false` — 404 JSON, если `true` — 200 JSON с обновлённой карточкой
+- [x] 2.1 Добавить `updateCardDoneHandler(req: Request, res: Response): Promise<void>` в `server/controllers/cards.controller.ts`: вызвать `await updateCardDone(req.params.id, req.body.isDone)`, если `false` — 404 JSON, если `true` — 200 JSON с обновлённой карточкой
 
 ## 3. Middleware
 
-- [ ] 3.1 Создать `server/middleware/validateDoneToggle.ts`: проверить `typeof req.body.isDone === "boolean"`, если не булево — 400 JSON, иначе `next()`
+- [x] 3.1 Создать `server/middleware/validateDoneToggle.ts`: проверить `typeof req.body.isDone === "boolean"`, если не булево — 400 JSON, иначе `next()`
 
 ## 4. Роутер
 
