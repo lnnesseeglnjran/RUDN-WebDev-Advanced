@@ -23,3 +23,10 @@ export async function deleteCard(id: string): Promise<boolean> {
   cards.splice(index, 1);
   return true;
 }
+
+export async function updateCardDone(id: string, isDone: boolean): Promise<boolean> {
+  const index = cards.findIndex(c => c.id === id);
+  if (index === -1) return false;
+  cards[index].isDone = isDone;
+  return true;
+}
