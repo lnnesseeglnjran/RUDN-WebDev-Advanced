@@ -4,6 +4,7 @@ import styles from "./BoardColumn.module.css";
 
 type Props = {
   cards: Card[];
+  onToggle: (id: string, isDone: boolean) => void;
 }
 
 export function BoardColumn(props: Props) {
@@ -14,8 +15,10 @@ export function BoardColumn(props: Props) {
         {props.cards.map(card => 
         <BoardCard 
           key={card.id}
+          id={card.id}
           title={card.title} 
           isDone={card.isDone} 
+          onToggle={props.onToggle}
           />)}
       </div>
     </section>

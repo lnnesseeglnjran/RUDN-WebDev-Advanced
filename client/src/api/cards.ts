@@ -15,3 +15,13 @@ export async function createCard(title: string): Promise<Card> {
   if (!response.ok) throw new Error("Не удалось создать карточку");
   return response.json();
 }
+
+export async function toggleCardDone(id: string, isDone: boolean): Promise<Card> {
+  const response = await fetch(`/api/cards/${id}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ isDone }),
+  });
+  if (!response.ok) throw new Error("Не удалось обновить карточку");
+  return response.json();
+}
